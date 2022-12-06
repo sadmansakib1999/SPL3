@@ -1,0 +1,38 @@
+<div class=" main-bg">
+  <div class="login-container text-c animated flipInX">
+    <div>
+        <h1 class="logo-badge"><span class="fa fa-user-circle"></span></h1>
+    </div>
+        <h3 class="text-darkgreen">Sign Up</h3>
+        <br>
+    <div class="container-content">
+        <form class="margin-t">
+            <div class="form-group mb-2">
+              <label class="text-darkgreen">EMAIL ADDRESS</label>
+              <input type="email" name="email" class="form-control" placeholder="Email Address" required="" #email="ngModel" [(ngModel)]="this.selectedUser.email" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group mb-2">
+              <label class="text-darkgreen left">PICTURE</label>
+              <input type="file" name="file" class="form-control" required="" #password="ngModel" [(ngModel)]="this.selectedUser.profile" [ngModelOptions]="{standalone: true}"
+              minlength="6" required [ngClass]="{'invalid-textbox':signUp}">
+            </div>
+            <div class="form-group mb-2">
+              <label class="text-darkgreen left">PASSWORD</label>
+              <input type="password" name="password" class="form-control" placeholder="***********" required="" #password="ngModel" [(ngModel)]="this.selectedUser.password" [ngModelOptions]="{standalone: true}"
+              minlength="6" required [ngClass]="{'invalid-textbox':signUp}">
+            </div>
+
+
+          <div class="alert" *ngIf="serverErrorMessages">
+              {{serverErrorMessages}}
+          </div>
+
+            <button type="submit" (click)="signUp()" class="btn btn-light form-button button-l margin-b btn-h" style="border: none;">Sign Up</button>
+
+            <p class="text-whitesmoke text-center"><small>Do have an account? </small>
+            <a href="" class="text-darkgreen" routerLink="signin" (click)="hasAccount()"><small >Sign in</small></a></p>
+        </form>
+        <p class="margin-t text-darkgreen"><small> <b> Copyright &copy; 2022 Sakib </b> </small> </p>
+    </div>
+  </div>
+</div>
